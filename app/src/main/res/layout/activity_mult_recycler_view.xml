@@ -22,29 +22,17 @@
             android:layout_height="wrap_content"
             android:id="@+id/horizontalRecyclerview"/>
 
-        <!--<RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">-->
+
         <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/verticalRecyclerview"/>
-        <!--</RelativeLayout>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">-->
 
-
-       <!-- </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">-->
 
         <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/verticalRecyclerview2"/>
-       <!-- </RelativeLayout>-->
     </LinearLayout>
 </ScrollView>
 
