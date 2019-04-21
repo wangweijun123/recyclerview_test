@@ -17,4 +17,11 @@
         android:layout_height="wrap_content"
         android:text="多类型recyclerview"
         android:onClick="testMultitypeView"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="一个页面多个recycleview"
+        android:onClick="testMultitypeViewInpage"/>
+
 </LinearLayout>

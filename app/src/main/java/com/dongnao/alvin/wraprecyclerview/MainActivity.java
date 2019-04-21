@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.dongnao.alvin.wraprecyclerview.multi.MultRecycleViewInpageAct;
 import com.dongnao.alvin.wraprecyclerview.normal.NormalRecyclerViewActivity;
 import com.dongnao.alvin.wraprecyclerview.normal.RecyclerViewTypeActivity;
 
@@ -22,6 +23,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void testMultitypeView(View view) {
         startActivity(new Intent(getApplicationContext(), RecyclerViewTypeActivity.class));
+    }
+
+    public void testMultitypeViewInpage(View view) {
+        startActivity(new Intent(getApplicationContext(), MultRecycleViewInpageAct.class));
     }
 
 

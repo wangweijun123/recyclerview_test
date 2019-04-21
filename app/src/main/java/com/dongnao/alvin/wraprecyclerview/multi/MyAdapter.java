@@ -1,4 +1,4 @@
-package com.dongnao.alvin.wraprecyclerview.normal;
+package com.dongnao.alvin.wraprecyclerview.multi;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -10,19 +10,28 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.dongnao.alvin.wraprecyclerview.R;
+import com.dongnao.alvin.wraprecyclerview.normal.NormalRecyclerViewActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
 class MyAdapter extends RecyclerView.Adapter<MyAdapter.Myholder> {
+    public static final int VERTICAT = 0;
+    public static final int HORIZONTAL = 1;
+
     List<String> data = new ArrayList<>();
     ItemClickListener mItemClickListener;
 
     Context context;
 
-    MyAdapter(Context context) {
-        for (int i = 0; i < 40; i++) {
-            data.add("i:" + i);
+    MyAdapter(Context context, int size, int type) {
+        for (int i = 0; i < size; i++) {
+            if (type == VERTICAT) {
+                data.add("垂直i:" + i);
+            } else {
+                data.add("横向i:" + i);
+            }
+
         }
         this.context = context;
     }
@@ -43,7 +52,7 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.Myholder> {
 
     @Override
     public void onBindViewHolder(Myholder holder, int position) {
-        Log.i(NormalRecyclerViewActivity.TAG, "position:" + position + ", holder.tv:"+holder.tv);
+        Log.i(NormalRecyclerViewActivity.TAG, "position:" + position);
         holder.tv.setText(data.get(position));
         if (position % 2 == 0) {
             holder.tv.setBackgroundColor(Color.BLACK);
