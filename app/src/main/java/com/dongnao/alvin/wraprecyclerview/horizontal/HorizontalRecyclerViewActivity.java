@@ -1,41 +1,33 @@
-package com.dongnao.alvin.wraprecyclerview.normal;
+package com.dongnao.alvin.wraprecyclerview.horizontal;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.ViewUtils;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.dongnao.alvin.wraprecyclerview.R;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class NormalRecyclerViewActivity extends AppCompatActivity {
+public class HorizontalRecyclerViewActivity extends AppCompatActivity {
     public static final String TAG = "wangweijun";
     RecyclerView recyclerview;
     MyAdapter myAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_normal_recycler_view);
+        setContentView(R.layout.activity_normal_recycler_view2);
 
         recyclerview = (RecyclerView) findViewById(R.id.recyclerview);
         //  纵向
-        recyclerview.setLayoutManager(new LinearLayoutManager(getApplicationContext(),
-                LinearLayoutManager.VERTICAL, false));
+//        recyclerview.setLayoutManager(new LinearLayoutManager(getApplicationContext(),
+//                LinearLayoutManager.VERTICAL, false));
         // 横向
 //        recyclerview.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false));
-//        recyclerview.setLayoutManager(new GridLayoutManager(
-//                getApplicationContext(), 3, LinearLayoutManager.VERTICAL,false));
+        recyclerview.setLayoutManager(new GridLayoutManager(
+                getApplicationContext(), 2, LinearLayoutManager.HORIZONTAL,false));
 
 //        recyclerview.setLayoutManager(new GridLayoutManager(
 //                getApplicationContext(), 2));

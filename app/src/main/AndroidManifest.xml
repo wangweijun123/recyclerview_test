@@ -19,6 +19,7 @@
         <activity android:name=".normal.NormalRecyclerViewActivity"/>
         <activity android:name=".normal.RecyclerViewTypeActivity"/>
         <activity android:name=".multi.MultRecycleViewInpageAct"/>
+        <activity android:name=".horizontal.HorizontalRecyclerViewActivity"/>
     </application>
 
 </manifest>

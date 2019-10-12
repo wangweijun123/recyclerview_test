@@ -1,4 +1,4 @@
-package com.dongnao.alvin.wraprecyclerview.normal;
+package com.dongnao.alvin.wraprecyclerview.horizontal;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.dongnao.alvin.wraprecyclerview.R;
+import com.dongnao.alvin.wraprecyclerview.normal.NormalRecyclerViewActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,15 +22,16 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.Myholder> {
     Context context;
 
     public MyAdapter(Context context) {
-        for (int i = 0; i < 40; i++) {
+        for (int i = 0; i < 19; i++) {
             data.add("i:" + i);
         }
+
         this.context = context;
     }
 
     @Override
     public Myholder onCreateViewHolder(ViewGroup parent, int viewType) {
-        Myholder myholder = new Myholder(LayoutInflater.from(context).inflate(R.layout.item_normal, parent, false));
+        Myholder myholder = new Myholder(LayoutInflater.from(context).inflate(R.layout.item_normal_vertical, parent, false));
         myholder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
