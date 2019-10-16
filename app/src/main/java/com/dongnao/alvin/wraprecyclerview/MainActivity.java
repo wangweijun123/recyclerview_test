@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        setSpannableStrClickEvent();
+        setSpannableStrClickEvent2();
     }
 
 
@@ -77,6 +77,28 @@ public class MainActivity extends AppCompatActivity {
         MyClickableSpan clickableSpan = new MyClickableSpan("http://www.jianshu.com/users/dbae9ac95c78");
         spannableString.setSpan(clickableSpan, 5, spannableString.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
         spannableString.setSpan(new TextAppearanceSpan(getApplicationContext(), R.style.style1),5, spannableString.length(), Spanned.SPAN_INCLUSIVE_INCLUSIVE);
+        viewById.setMovementMethod(LinkMovementMethod.getInstance());
+        viewById.setHighlightColor(Color.parseColor("#36969696"));
+        viewById.setText(spannableString);
+    }
+
+    private void setSpannableStrClickEvent2() {
+        TextView viewById = findViewById(R.id.tv_content);
+        String content = viewById.getText().toString();
+        SpannableString spannableString = new SpannableString(content);
+        String userProtocol = "《用户服务协议》";
+        int oneIndex = content.indexOf(userProtocol);
+        String userAuthorization = "《用户授权协议》";
+        int secondIndex = content.indexOf(userAuthorization);
+        String userPrivacy = "《隐私政策》";
+        int thirdIndex = content.indexOf(userPrivacy);
+
+        MyClickableSpan clickableSpan = new MyClickableSpan("http://www.jianshu.com/users/dbae9ac95c78");
+        spannableString.setSpan(clickableSpan, oneIndex, oneIndex + userProtocol.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+        spannableString.setSpan(new TextAppearanceSpan(getApplicationContext(), R.style.style1),oneIndex, oneIndex + userProtocol.length(), Spanned.SPAN_INCLUSIVE_INCLUSIVE);
+        spannableString.setSpan(new TextAppearanceSpan(getApplicationContext(), R.style.style1),secondIndex, secondIndex + userAuthorization.length(), Spanned.SPAN_INCLUSIVE_INCLUSIVE);
+        spannableString.setSpan(new TextAppearanceSpan(getApplicationContext(), R.style.style1),thirdIndex, thirdIndex + userPrivacy.length(), Spanned.SPAN_INCLUSIVE_INCLUSIVE);
+
         viewById.setMovementMethod(LinkMovementMethod.getInstance());
         viewById.setHighlightColor(Color.parseColor("#36969696"));
         viewById.setText(spannableString);
